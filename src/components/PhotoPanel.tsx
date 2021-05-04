@@ -9,7 +9,6 @@ export const PhotoPanel = () => {
       <div className="overlay">
         <h1 className="header">About</h1>
         <div className="content-bottom">
-          <div className="tooltiptext">hello</div>
           <span className="dot-phase-1">.</span>
           <br />
           <span className="dot-phase-2">.</span>

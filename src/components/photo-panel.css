@@ -92,21 +92,6 @@
   animation-iteration-count: infinite;
 }
 
-.photo .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-
-  /* Position the tooltip text - see examples below! */
-  position: relative;
-  z-index: 1;
-  top: -5px;
-  left: 105%;
-}
 .photo .content-bottom:hover .tooltiptext {
   visibility: visible;
 }
