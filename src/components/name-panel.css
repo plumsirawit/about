@@ -12,6 +12,8 @@
 
 .name .header {
   font-family: 'Lato';
+  font-weight: 900;
+  font-style: italic;
   font-size: 5rem;
   margin-top: 0.5em;
   margin-bottom: 0.1em;
