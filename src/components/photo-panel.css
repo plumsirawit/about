@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap');
+
+.photo-panel-img {
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    ),
+    linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    );
+}
+
+.header {
+  font-family: 'Lato';
+  font-size: 5rem;
+  margin-top: 0.5em;
+  justify-self: flex-start;
+}
+
+.content-bottom {
+  /* margin-top: auto; */
+  align-self: center;
+  justify-self: flex-end;
+  color: rgba(230, 240, 230, 0);
+  font-size: 5em;
+  line-height: 0.5em;
+  padding-bottom: 0.7em;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+@keyframes dot-phase {
+  0% {
+    color: rgba(230, 240, 230, 1);
+  }
+  50% {
+    color: rgba(230, 240, 230, 0);
+  }
+  100% {
+    color: rgba(230, 240, 230, 0);
+  }
+}
+
+.dot-phase-1 {
+  animation-name: dot-phase;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.dot-phase-2 {
+  animation-name: dot-phase;
+  animation-duration: 1.5s;
+  animation-delay: 0.3s;
+  animation-iteration-count: infinite;
+}
+
+.dot-phase-3 {
+  animation-name: dot-phase;
+  animation-duration: 1.5s;
+  animation-delay: 0.6s;
+  animation-iteration-count: infinite;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: relative;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+.content-bottom:hover .tooltiptext {
+  visibility: visible;
+}
