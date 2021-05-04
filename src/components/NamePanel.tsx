@@ -2,43 +2,45 @@ import React, { useEffect, useRef } from 'react';
 import { PagePanel } from './PagePanel';
 import './name-panel.css';
 import drawingSvg from '../assets/drawing.svg';
+import { drawSVG } from '../utils/canvas';
 
 export const NamePanel = () => {
-  const nameCanvas = useRef<HTMLCanvasElement>(null);
-  const draw = () => {
-    if (!nameCanvas || !nameCanvas.current) {
-      return;
-    }
-    const canvas = nameCanvas.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {
-      return;
-    }
-    console.log('canvas draw', canvas.width, canvas.height);
-    ctx.beginPath();
-    ctx.strokeRect(50, 50, 50, 50);
-    ctx.stroke();
-  };
+  const svgRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const listener = () => {
-      if (!nameCanvas || !nameCanvas.current) {
-        return;
-      }
-      nameCanvas.current.width = window.innerWidth;
-      nameCanvas.current.height = window.innerHeight;
-      draw();
-    };
-    if (nameCanvas.current) {
-      listener();
+    if (!svgRef.current) {
+      return;
     }
-    window.addEventListener('resize', listener);
-    return () => window.removeEventListener('resize', listener);
-  }, [nameCanvas.current]);
+    fetch(drawingSvg)
+      .then((resp) => resp.text())
+      .then((data) => {
+        if (svgRef.current) {
+          svgRef.current.innerHTML = data;
+        }
+      });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // isIntersecting is true when element and viewport are overlapping
+        // isIntersecting is false when element and viewport don't overlap
+        if (entries[0].isIntersecting === true) {
+          if (svgRef.current?.firstChild) {
+            drawSVG(svgRef.current.firstElementChild as SVGSVGElement);
+          } else {
+            console.error('SVG not found');
+          }
+        }
+      },
+      { threshold: [0] },
+    );
+    observer.observe(svgRef.current);
+    return () => {
+      svgRef.current && observer.unobserve(svgRef.current);
+    };
+  }, [svgRef.current]);
   return (
     <PagePanel className="name">
       <div className="main">
         <h1 className="header">Hello!</h1>
-        <img className="drawing" src={drawingSvg} />
+        <div ref={svgRef} className="drawing" />
         <p className="content-bottom">
           My name is Sirawit Pongnakintr. I'm a student preparing to study
           abroad in the fields of mathematics and computer science. I'm also
