@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { PagePanel } from './PagePanel';
 import './name-panel.css';
 import drawingSvg from '../assets/drawing.svg';
@@ -6,6 +6,7 @@ import { drawSVG } from '../utils/canvas';
 
 export const NamePanel = () => {
   const svgRef = useRef<HTMLDivElement>(null);
+  const [isDrawn, setIsDrawn] = useState<boolean>(false);
   useEffect(() => {
     if (!svgRef.current) {
       return;
@@ -23,7 +24,10 @@ export const NamePanel = () => {
         // isIntersecting is false when element and viewport don't overlap
         if (entries[0].isIntersecting === true) {
           if (svgRef.current?.firstChild) {
-            drawSVG(svgRef.current.firstElementChild as SVGSVGElement);
+            if (!isDrawn) {
+              drawSVG(svgRef.current.firstElementChild as SVGSVGElement);
+              setIsDrawn(true);
+            }
           } else {
             console.error('SVG not found');
           }
