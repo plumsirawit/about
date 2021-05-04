@@ -39,6 +39,8 @@
 
 .photo .header {
   font-family: 'Lato';
+  font-weight: 900;
+  font-style: italic;
   font-size: 5rem;
   margin-top: 0.5em;
   justify-self: flex-start;
