@@ -10,6 +10,8 @@ import {
   EducationMiddleSchoolPanel,
   EducationHighSchoolPanel,
 } from './components/EducationPanel';
+import { AchievementsPanel } from './components/AchievementsPanel';
+import { ExperienceHeadPanel } from './components/ExperiencePanel';
 
 interface AppProps {}
 
@@ -26,10 +28,12 @@ function App({}: AppProps) {
     <div className="App">
       <PhotoPanel />
       <NamePanel />
+      <ExperienceHeadPanel />
       <EducationHeadPanel />
       <EducationPrimarySchoolPanel />
       <EducationMiddleSchoolPanel />
       <EducationHighSchoolPanel />
+      <AchievementsPanel />
       <PagePanel>hello</PagePanel>
     </div>
   );

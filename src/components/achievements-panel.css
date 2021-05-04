@@ -1,0 +1,41 @@
+.achievements .main {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  z-index: 2;
+  /* background: #101213; */
+  background: #fff27f;
+}
+
+.achievements .header {
+  font-family: 'Lato';
+  font-weight: 900;
+  font-style: italic;
+  font-size: 5rem;
+  margin-top: 0.5em;
+  margin-bottom: 0.1em;
+  justify-self: flex-start;
+}
+
+.achievements .drawing {
+  min-width: 0;
+  min-height: 0;
+  flex-shrink: 1;
+}
+.achievements .drawing svg {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.achievements .content-bottom {
+  /* margin-top: auto; */
+  font-family: 'Raleway';
+  font-size: 1.5rem;
+  align-self: center;
+  justify-self: flex-end;
+  padding-bottom: 0.7em;
+  max-width: 70%;
+}

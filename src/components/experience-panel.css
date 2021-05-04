@@ -1,0 +1,20 @@
+.experience-head .main {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  z-index: 2;
+  background: #fffef1;
+}
+
+.experience-head .header {
+  font-family: 'Lato';
+  font-weight: 900;
+  font-style: italic;
+  font-size: 5rem;
+  margin-top: 0.5em;
+  margin-bottom: 0.1em;
+  justify-self: flex-start;
+}
