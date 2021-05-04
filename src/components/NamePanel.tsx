@@ -20,33 +20,36 @@ export const NamePanel = () => {
     if (!svgRef.current) {
       return;
     }
-    fetch(drawingSvg)
-      .then((resp) => resp.text())
-      .then((data) => {
-        if (svgRef.current) {
-          svgRef.current.innerHTML = data;
-          setIsLoading(false);
-        }
-      });
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // isIntersecting is true when element and viewport are overlapping
-        // isIntersecting is false when element and viewport don't overlap
-        if (entries[0].isIntersecting === true) {
-          setDrawingState(DrawingState.READY);
-        }
-        console.log(entries[0].isIntersecting, drawingState);
-      },
-      { threshold: [0] },
-    );
-    observer.observe(svgRef.current);
-    return () => {
-      svgRef.current && observer.unobserve(svgRef.current);
-    };
-  }, [svgRef.current]);
+    if (isLoading) {
+      fetch(drawingSvg)
+        .then((resp) => resp.text())
+        .then((data) => {
+          if (svgRef.current) {
+            svgRef.current.innerHTML = data;
+            setIsLoading(false);
+          }
+        });
+    }
+    if (drawingState === DrawingState.UNREADY) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          // isIntersecting is true when element and viewport are overlapping
+          // isIntersecting is false when element and viewport don't overlap
+          if (entries[0].isIntersecting === true) {
+            setDrawingState(DrawingState.READY);
+          }
+        },
+        { threshold: [0] },
+      );
+      observer.observe(svgRef.current);
+      return () => {
+        svgRef.current && observer.unobserve(svgRef.current);
+      };
+    }
+  }, [svgRef.current, drawingState, isLoading]);
   useEffect(() => {
     if (
-      svgRef.current?.firstChild &&
+      svgRef.current?.firstElementChild &&
       !isLoading &&
       drawingState === DrawingState.READY
     ) {
@@ -55,7 +58,15 @@ export const NamePanel = () => {
         setDrawingState(DrawingState.DONE),
       );
     }
-  }, [drawingState, svgRef.current, svgRef.current?.firstChild, isLoading]);
+  }, [
+    drawingState,
+    svgRef.current,
+    svgRef.current?.firstElementChild,
+    isLoading,
+  ]);
+  useEffect(() => {
+    console.log(drawingState);
+  }, [drawingState]);
   return (
     <PagePanel className="name">
       <div className="main">
