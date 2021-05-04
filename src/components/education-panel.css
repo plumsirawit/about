@@ -1,0 +1,76 @@
+.education-head {
+  min-height: 0;
+}
+
+.education-head .main {
+  min-height: 0;
+  max-height: 100vh;
+  width: 100%;
+  z-index: 2;
+  /* background: #101213; */
+  background: #fff27f;
+}
+
+.education-head .header {
+  font-family: 'Lato';
+  font-weight: 900;
+  font-style: italic;
+  font-size: 5rem;
+}
+
+.education-primary .main {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  z-index: 2;
+  /* background: #101213; */
+  background: #fff27f;
+}
+
+.education-primary .header {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+.education-middle .main {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  z-index: 2;
+  /* background: #101213; */
+  background: #fff27f;
+}
+
+.education-middle .header {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+.education-high .main {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  z-index: 2;
+  /* background: #101213; */
+  background: #fff27f;
+}
+
+.education-high .header {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2rem;
+}

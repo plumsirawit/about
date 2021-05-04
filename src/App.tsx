@@ -4,6 +4,12 @@ import './App.css';
 import { PagePanel } from './components/PagePanel';
 import { PhotoPanel } from './components/PhotoPanel';
 import { NamePanel } from './components/NamePanel';
+import {
+  EducationHeadPanel,
+  EducationPrimarySchoolPanel,
+  EducationMiddleSchoolPanel,
+  EducationHighSchoolPanel,
+} from './components/EducationPanel';
 
 interface AppProps {}
 
@@ -20,6 +26,10 @@ function App({}: AppProps) {
     <div className="App">
       <PhotoPanel />
       <NamePanel />
+      <EducationHeadPanel />
+      <EducationPrimarySchoolPanel />
+      <EducationMiddleSchoolPanel />
+      <EducationHighSchoolPanel />
       <PagePanel>hello</PagePanel>
     </div>
   );
