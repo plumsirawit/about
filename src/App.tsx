@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { PagePanel } from './components/PagePanel';
 import { PhotoPanel } from './components/PhotoPanel';
+import { NamePanel } from './components/NamePanel';
 
 interface AppProps {}
 
@@ -18,6 +19,7 @@ function App({}: AppProps) {
   return (
     <div className="App">
       <PhotoPanel />
+      <NamePanel />
       <PagePanel>hello</PagePanel>
     </div>
   );

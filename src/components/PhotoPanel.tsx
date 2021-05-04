@@ -5,7 +5,7 @@ import './photo-panel.css';
 
 export const PhotoPanel = () => {
   return (
-    <PagePanel>
+    <PagePanel className="photo">
       <div className="overlay">
         <h1 className="header">About</h1>
         <div className="content-bottom">

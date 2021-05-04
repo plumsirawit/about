@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&family=Raleway&display=swap');
+
+.name .name-panel-img {
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name .overlay {
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  /* background: #101213; */
+  background: #ffe57f;
+}
+
+.name .header {
+  font-family: 'Lato';
+  font-size: 5rem;
+  margin-top: 0.5em;
+  justify-self: flex-start;
+}
+
+.name p.header {
+  font-family: 'Raleway';
+  font-size: 1.7rem;
+}
+
+.name .content-bottom {
+  /* margin-top: auto; */
+  font-family: 'Raleway';
+  font-size: 1.5rem;
+  align-self: center;
+  justify-self: flex-end;
+  padding-bottom: 0.7em;
+  max-width: 70%;
+}
