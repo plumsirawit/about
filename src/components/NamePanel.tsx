@@ -15,6 +15,7 @@ export const NamePanel = () => {
   const [drawingState, setDrawingState] = useState<DrawingState>(
     DrawingState.UNREADY,
   );
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   useEffect(() => {
     if (!svgRef.current) {
       return;
@@ -24,6 +25,7 @@ export const NamePanel = () => {
       .then((data) => {
         if (svgRef.current) {
           svgRef.current.innerHTML = data;
+          setIsLoading(false);
         }
       });
     const observer = new IntersectionObserver(
@@ -33,6 +35,7 @@ export const NamePanel = () => {
         if (entries[0].isIntersecting === true) {
           setDrawingState(DrawingState.READY);
         }
+        console.log(entries[0].isIntersecting, drawingState);
       },
       { threshold: [0] },
     );
@@ -42,13 +45,17 @@ export const NamePanel = () => {
     };
   }, [svgRef.current]);
   useEffect(() => {
-    if (svgRef.current?.firstChild && drawingState === DrawingState.READY) {
+    if (
+      svgRef.current?.firstChild &&
+      !isLoading &&
+      drawingState === DrawingState.READY
+    ) {
       setDrawingState(DrawingState.DRAWING);
       drawSVG(svgRef.current.firstElementChild as SVGSVGElement).then(() =>
         setDrawingState(DrawingState.DONE),
       );
     }
-  }, [drawingState, svgRef.current, svgRef.current?.firstChild]);
+  }, [drawingState, svgRef.current, svgRef.current?.firstChild, isLoading]);
   return (
     <PagePanel className="name">
       <div className="main">
