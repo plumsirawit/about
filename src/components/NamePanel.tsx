@@ -4,9 +4,17 @@ import './name-panel.css';
 import drawingSvg from '../assets/drawing.svg';
 import { drawSVG } from '../utils/canvas';
 
+enum DrawingState {
+  UNREADY,
+  READY,
+  DRAWING,
+  DONE,
+}
 export const NamePanel = () => {
   const svgRef = useRef<HTMLDivElement>(null);
-  const [isDrawn, setIsDrawn] = useState<boolean>(false);
+  const [drawingState, setDrawingState] = useState<DrawingState>(
+    DrawingState.UNREADY,
+  );
   useEffect(() => {
     if (!svgRef.current) {
       return;
@@ -23,14 +31,7 @@ export const NamePanel = () => {
         // isIntersecting is true when element and viewport are overlapping
         // isIntersecting is false when element and viewport don't overlap
         if (entries[0].isIntersecting === true) {
-          if (svgRef.current?.firstChild) {
-            if (!isDrawn) {
-              drawSVG(svgRef.current.firstElementChild as SVGSVGElement);
-              setIsDrawn(true);
-            }
-          } else {
-            console.error('SVG not found');
-          }
+          setDrawingState(DrawingState.READY);
         }
       },
       { threshold: [0] },
@@ -40,6 +41,14 @@ export const NamePanel = () => {
       svgRef.current && observer.unobserve(svgRef.current);
     };
   }, [svgRef.current]);
+  useEffect(() => {
+    if (svgRef.current?.firstChild && drawingState === DrawingState.READY) {
+      setDrawingState(DrawingState.DRAWING);
+      drawSVG(svgRef.current.firstElementChild as SVGSVGElement).then(() =>
+        setDrawingState(DrawingState.DONE),
+      );
+    }
+  }, [drawingState, svgRef.current, svgRef.current?.firstChild]);
   return (
     <PagePanel className="name">
       <div className="main">
