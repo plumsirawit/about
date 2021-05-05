@@ -9,7 +9,8 @@
   flex-direction: column;
   width: 100%;
   z-index: 2;
-  background: rgba(255, 254, 241, 1);
+  color: rgba(255, 254, 241, 0.9);
+  background: rgba(10, 12, 14, 1);
 }
 
 .experience {
