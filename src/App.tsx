@@ -17,6 +17,7 @@ import {
   ExperienceBriklPanel,
   ExperienceIPSTPanel,
   VolunteerExperienceHeadPanel,
+  ExperienceFreelancePanel,
 } from './components/ExperiencePanel';
 
 interface AppProps {}
@@ -36,6 +37,7 @@ function App({}: AppProps) {
       <NamePanel />
       <ExperienceHeadPanel />
       <ExperienceBriklPanel />
+      <ExperienceFreelancePanel />
       <ExperienceSCSUPanel />
       <ExperienceIPSTPanel />
       <VolunteerExperienceHeadPanel />
