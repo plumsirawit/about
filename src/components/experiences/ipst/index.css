@@ -3,3 +3,10 @@
   background-position: center;
   background-size: cover;
 }
+
+.experience.experience-ipst video {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}

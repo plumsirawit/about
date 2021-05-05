@@ -4,8 +4,6 @@
   background-size: cover;
 }
 
-.experience-thaco .description {
-  padding: 10vh;
+.experience.experience-thaco .overlay {
   background: none;
-  color: white;
 }

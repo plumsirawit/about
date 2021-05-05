@@ -12,11 +12,10 @@ export const ExperienceIPSTPanel = () => {
   }, [videoRef.current]);
   return (
     <ExperiencePanel className="experience-ipst">
-      <div className="overlay">
-        <video autoPlay muted loop ref={videoRef}>
-          <source src={ekamaiThonglor} type="video/mp4" />
-        </video>
-      </div>
+      <video autoPlay muted loop ref={videoRef}>
+        <source src={ekamaiThonglor} type="video/mp4" />
+      </video>
+      <div className="overlay"></div>
       <div className="main">
         <div className="description">
           <h1 className="header">
