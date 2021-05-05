@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { PagePanel } from './PagePanel';
 import './experience-panel.css';
+import ekamaiThonglor from '../assets/walk3x.mp4';
 
 export const ExperienceHeadPanel = () => {
   return (
@@ -60,9 +61,19 @@ export const ExperienceBriklPanel = () => {
 };
 
 export const ExperienceIPSTPanel = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 2;
+    }
+  }, [videoRef.current]);
   return (
     <PagePanel className="experience-ipst">
-      <div className="overlay" />
+      <div className="overlay">
+        <video autoPlay muted loop ref={videoRef}>
+          <source src={ekamaiThonglor} type="video/mp4" />
+        </video>
+      </div>
       <div className="main">
         <div className="description">
           <h1 className="header">
@@ -78,7 +89,7 @@ export const ExperienceIPSTPanel = () => {
   );
 };
 
-export const VolunteerExperiencePanel = () => {
+export const VolunteerExperienceHeadPanel = () => {
   return (
     <PagePanel className="experience-head">
       <div className="main">
@@ -86,4 +97,8 @@ export const VolunteerExperiencePanel = () => {
       </div>
     </PagePanel>
   );
+};
+
+export const VolunteerExperienceFeedingThailandPanel = () => {
+  return <></>;
 };
