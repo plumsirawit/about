@@ -1,5 +1,8 @@
+.name {
+  min-height: 0;
+}
 .name .main {
-  height: 100vh;
+  height: 100vmin;
   max-height: 100vh;
   display: flex;
   justify-content: space-between;
@@ -7,7 +10,7 @@
   width: 100%;
   z-index: 2;
   /* background: #101213; */
-  background: #ffc87f;
+  background: rgb(253, 229, 201);
 }
 
 .name .header {
@@ -33,7 +36,7 @@
 .name .content-bottom {
   /* margin-top: auto; */
   font-family: 'Raleway';
-  font-size: 1.2rem;
+  font-size: calc(0.6vw + 0.6rem);
   align-self: center;
   justify-self: flex-end;
   padding-bottom: 0.7em;
