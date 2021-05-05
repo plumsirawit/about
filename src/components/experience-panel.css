@@ -54,15 +54,17 @@
 
 .experience .description {
   color: white;
-  padding-top: 8vh;
-  padding-bottom: 12vh;
+  padding-top: 15vh;
+  padding-bottom: 20vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 .experience p {
   /* margin-top: auto; */
-  font-family: 'Raleway';
-  font-weight: 500;
-  font-size: 1.2rem;
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: 1rem;
   align-self: center;
   justify-self: flex-end;
   padding-bottom: 0.7em;
