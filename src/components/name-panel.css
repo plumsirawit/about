@@ -14,7 +14,7 @@
   font-family: 'Lato';
   font-weight: 900;
   font-style: italic;
-  font-size: 5rem;
+  font-size: calc(2.5vw + 2.5rem);
   margin-top: 0.5em;
   margin-bottom: 0.1em;
   justify-self: flex-start;
@@ -33,7 +33,7 @@
 .name .content-bottom {
   /* margin-top: auto; */
   font-family: 'Raleway';
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   align-self: center;
   justify-self: flex-end;
   padding-bottom: 0.7em;
