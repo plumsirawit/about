@@ -19,6 +19,8 @@ import {
   VolunteerExperienceHeadPanel,
   ExperienceFreelancePanel,
 } from './components/ExperiencePanel';
+import { VolunteerExperienceFeedingThailandPanel } from './components/experiences/feedingthailand';
+import { VolunteerExperienceMWITPanel } from './components/experiences/mwit';
 
 interface AppProps {}
 
@@ -41,6 +43,8 @@ function App({}: AppProps) {
       <ExperienceSCSUPanel />
       <ExperienceIPSTPanel />
       <VolunteerExperienceHeadPanel />
+      <VolunteerExperienceFeedingThailandPanel />
+      <VolunteerExperienceMWITPanel />
       <EducationHeadPanel />
       <EducationPrimarySchoolPanel />
       <EducationMiddleSchoolPanel />

@@ -1,0 +1,57 @@
+.experience-mwit {
+  background: url('/dist/assets/preposn.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.experience-mwit .main {
+  padding-top: 10vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  z-index: 2;
+}
+
+.experience-mwit .description {
+  padding: 10vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 12, 14, 0),
+    rgba(10, 12, 14, 0.8),
+    rgba(10, 12, 14, 0.6),
+    rgba(10, 12, 14, 0)
+  );
+  color: white;
+}
+
+.experience-mwit .header {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.experience-mwit .overlay {
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.experience-mwit p {
+  /* margin-top: auto; */
+  font-family: 'Raleway';
+  font-weight: 500;
+  font-size: 1.2rem;
+  align-self: center;
+  justify-self: flex-end;
+  padding-bottom: 0.7em;
+  max-width: 70%;
+  margin: auto;
+}
