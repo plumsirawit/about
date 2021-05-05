@@ -35,8 +35,8 @@ function App({}: AppProps) {
       <PhotoPanel />
       <NamePanel />
       <ExperienceHeadPanel />
-      <ExperienceSCSUPanel />
       <ExperienceBriklPanel />
+      <ExperienceSCSUPanel />
       <ExperienceIPSTPanel />
       <VolunteerExperienceHeadPanel />
       <EducationHeadPanel />

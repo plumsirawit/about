@@ -1,0 +1,51 @@
+.experience-scsu {
+  background: url('/dist/assets/su_toi15_cut.jpg');
+}
+
+.experience-scsu .main {
+  padding-top: 10vh;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  z-index: 2;
+}
+
+.experience-scsu .header {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.experience-scsu .overlay {
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 254, 241, 1),
+    rgba(255, 254, 241, 0.5),
+    rgba(255, 254, 241, 0.5),
+    rgba(255, 254, 241, 0),
+    rgba(255, 254, 241, 0)
+  );
+}
+
+.experience-scsu p {
+  /* margin-top: auto; */
+  font-family: 'Raleway';
+  font-weight: 500;
+  font-size: 1.2rem;
+  align-self: center;
+  justify-self: flex-end;
+  padding-bottom: 0.7em;
+  max-width: 70%;
+}

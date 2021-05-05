@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { PagePanel } from './PagePanel';
 import './experience-panel.css';
-import ekamaiThonglor from '../assets/walk3x.mp4';
 
 export const ExperienceHeadPanel = () => {
   return (
@@ -13,30 +12,40 @@ export const ExperienceHeadPanel = () => {
   );
 };
 
-export const ExperienceSCSUPanel = () => {
+export * from './experiences/scsu';
+export * from './experiences/brikl';
+export * from './experiences/ipst';
+
+export const ExperienceFreelancePanel = () => {
   return (
-    <PagePanel className="experience-scsu">
+    <PagePanel className="experience-freelance">
       <div className="overlay" />
       <div className="main">
-        <h1 className="header">
-          Instructor for Silpakorn University team to compete in Thailand
-          Olympiad in Informatics
-        </h1>
-        <p className="body">
-          I've teached a few groups of competitive programmers to help for their
-          preparations for the annual national programming competitions in
-          Thailand, Thailand's Olympiad in Informatics (TOI). I have a strong
-          passion in teaching new-generation students, fostering their
-          programming and problem solving skills.
-        </p>
+        <div className="description">
+          <h1 className="header">Freelance Software Engineer</h1>
+          <p className="body">
+            In my free time, I'm available as a freelance software engineer. I
+            have done a few freelance projects with small teams of 2-3 people.
+          </p>
+        </div>
       </div>
     </PagePanel>
   );
 };
 
-export const ExperienceBriklPanel = () => {
+export const VolunteerExperienceHeadPanel = () => {
   return (
-    <PagePanel className="experience-brikl">
+    <PagePanel className="experience-head">
+      <div className="main">
+        <h1 className="header">Volunteer Experience</h1>
+      </div>
+    </PagePanel>
+  );
+};
+
+export const VolunteerExperienceFeedingThailandPanel = () => {
+  return (
+    <PagePanel className="experience-feedingthailand">
       <div className="overlay" />
       <div className="main">
         <div className="description">
@@ -60,45 +69,6 @@ export const ExperienceBriklPanel = () => {
   );
 };
 
-export const ExperienceIPSTPanel = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 2;
-    }
-  }, [videoRef.current]);
-  return (
-    <PagePanel className="experience-ipst">
-      <div className="overlay">
-        <video autoPlay muted loop ref={videoRef}>
-          <source src={ekamaiThonglor} type="video/mp4" />
-        </video>
-      </div>
-      <div className="main">
-        <div className="description">
-          <h1 className="header">
-            Teaching Assistant at IPST Computer Olympiad Camp
-          </h1>
-          <p className="body">
-            I've joined the staff team as a teaching assistant. I spent my time
-            mostly on preparing materials, problems, solutions and test cases.
-          </p>
-        </div>
-      </div>
-    </PagePanel>
-  );
-};
-
-export const VolunteerExperienceHeadPanel = () => {
-  return (
-    <PagePanel className="experience-head">
-      <div className="main">
-        <h1 className="header">Volunteer Experience</h1>
-      </div>
-    </PagePanel>
-  );
-};
-
-export const VolunteerExperienceFeedingThailandPanel = () => {
+export const VolunteerExperienceMWITPanel = () => {
   return <></>;
 };
