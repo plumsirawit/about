@@ -26,7 +26,12 @@ export const NamePanel = () => {
         .then((data) => {
           if (svgRef.current) {
             svgRef.current.innerHTML = data;
-            setIsLoading(false);
+            const svgElem = svgRef.current.querySelector('svg')!;
+            const listener = () => {
+              setIsLoading(false);
+              svgElem.removeEventListener('load', listener);
+            };
+            svgElem.addEventListener('load', listener);
           }
         });
     }
@@ -48,13 +53,9 @@ export const NamePanel = () => {
     }
   }, [svgRef.current, drawingState, isLoading]);
   useEffect(() => {
-    if (
-      svgRef.current?.firstElementChild &&
-      !isLoading &&
-      drawingState === DrawingState.READY
-    ) {
+    if (!isLoading && drawingState === DrawingState.READY) {
       setDrawingState(DrawingState.DRAWING);
-      drawSVG(svgRef.current.firstElementChild as SVGSVGElement).then(() =>
+      drawSVG(svgRef.current!.firstElementChild as SVGSVGElement).then(() =>
         setDrawingState(DrawingState.DONE),
       );
     }
