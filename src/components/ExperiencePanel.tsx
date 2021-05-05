@@ -2,6 +2,17 @@ import React, { useEffect, useRef } from 'react';
 import { PagePanel } from './PagePanel';
 import './experience-panel.css';
 
+interface IExperiencePanelProps {
+  className?: string;
+}
+export const ExperiencePanel = (
+  props: React.PropsWithChildren<IExperiencePanelProps>,
+) => (
+  <PagePanel className={'experience ' + props.className}>
+    {props.children}
+  </PagePanel>
+);
+
 export const ExperienceHeadPanel = () => {
   return (
     <PagePanel className="experience-head">

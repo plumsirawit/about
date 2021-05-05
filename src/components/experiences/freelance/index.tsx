@@ -1,10 +1,10 @@
 import React from 'react';
-import { PagePanel } from '../../PagePanel';
+import { ExperiencePanel } from '../../ExperiencePanel';
 import './index.css';
 
 export const ExperienceFreelancePanel = () => {
   return (
-    <PagePanel className="experience-freelance">
+    <ExperiencePanel className="experience-freelance">
       <div className="overlay" />
       <div className="main">
         <div className="description">
@@ -15,6 +15,6 @@ export const ExperienceFreelancePanel = () => {
           </p>
         </div>
       </div>
-    </PagePanel>
+    </ExperiencePanel>
   );
 };

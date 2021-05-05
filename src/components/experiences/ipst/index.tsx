@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { PagePanel } from '../../PagePanel';
+import { ExperiencePanel } from '../../ExperiencePanel';
 import ekamaiThonglor from '../../../assets/walk3x.mp4';
 import './index.css';
 
@@ -11,7 +11,7 @@ export const ExperienceIPSTPanel = () => {
     }
   }, [videoRef.current]);
   return (
-    <PagePanel className="experience-ipst">
+    <ExperiencePanel className="experience-ipst">
       <div className="overlay">
         <video autoPlay muted loop ref={videoRef}>
           <source src={ekamaiThonglor} type="video/mp4" />
@@ -28,6 +28,6 @@ export const ExperienceIPSTPanel = () => {
           </p>
         </div>
       </div>
-    </PagePanel>
+    </ExperiencePanel>
   );
 };
