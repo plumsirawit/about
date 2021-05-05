@@ -11,7 +11,12 @@ import {
   EducationHighSchoolPanel,
 } from './components/EducationPanel';
 import { AchievementsPanel } from './components/AchievementsPanel';
-import { ExperienceHeadPanel } from './components/ExperiencePanel';
+import {
+  ExperienceHeadPanel,
+  ExperienceSCSUPanel,
+  ExperienceBriklPanel,
+  ExperienceIPSTPanel,
+} from './components/ExperiencePanel';
 
 interface AppProps {}
 
@@ -29,6 +34,9 @@ function App({}: AppProps) {
       <PhotoPanel />
       <NamePanel />
       <ExperienceHeadPanel />
+      <ExperienceSCSUPanel />
+      <ExperienceBriklPanel />
+      <ExperienceIPSTPanel />
       <EducationHeadPanel />
       <EducationPrimarySchoolPanel />
       <EducationMiddleSchoolPanel />
