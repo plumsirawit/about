@@ -10,30 +10,38 @@ enum DrawingState {
   DRAWING,
   DONE,
 }
+enum FetchState {
+  UNFETCHED,
+  FETCHING,
+  FETCHED,
+}
 export const NamePanel = () => {
   const svgRef = useRef<HTMLDivElement>(null);
   const [drawingState, setDrawingState] = useState<DrawingState>(
     DrawingState.UNREADY,
   );
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [fetchState, setFetchState] = useState<FetchState>(
+    FetchState.UNFETCHED,
+  );
   useEffect(() => {
     if (!svgRef.current) {
       return;
     }
-    if (isLoading) {
+    if (fetchState === FetchState.UNFETCHED) {
+      setFetchState(FetchState.FETCHING);
       fetch(drawingSvg)
         .then((resp) => resp.text())
         .then((data) => {
           if (svgRef.current) {
             svgRef.current.innerHTML = data;
-            const svgElem = svgRef.current.querySelector('svg')!;
-            const listener = () => {
-              setIsLoading(false);
-              svgElem.removeEventListener('load', listener);
-            };
-            svgElem.addEventListener('load', listener);
+            setTimeout(() => setFetchState(FetchState.FETCHED), 200); // This is bad practice but I have no other choice.
           }
         });
+    }
+  }, [svgRef.current, fetchState]);
+  useEffect(() => {
+    if (!svgRef.current) {
+      return;
     }
     if (drawingState === DrawingState.UNREADY) {
       const observer = new IntersectionObserver(
@@ -51,9 +59,12 @@ export const NamePanel = () => {
         svgRef.current && observer.unobserve(svgRef.current);
       };
     }
-  }, [svgRef.current, drawingState, isLoading]);
+  }, [svgRef.current, drawingState, fetchState]);
   useEffect(() => {
-    if (!isLoading && drawingState === DrawingState.READY) {
+    if (
+      fetchState === FetchState.FETCHED &&
+      drawingState === DrawingState.READY
+    ) {
       setDrawingState(DrawingState.DRAWING);
       drawSVG(svgRef.current!.firstElementChild as SVGSVGElement).then(() =>
         setDrawingState(DrawingState.DONE),
@@ -63,11 +74,11 @@ export const NamePanel = () => {
     drawingState,
     svgRef.current,
     svgRef.current?.firstElementChild,
-    isLoading,
+    fetchState,
   ]);
   useEffect(() => {
-    console.log(drawingState);
-  }, [drawingState]);
+    console.log(drawingState, fetchState);
+  }, [drawingState, fetchState]);
   return (
     <PagePanel className="name">
       <div className="main">
