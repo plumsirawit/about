@@ -144,7 +144,9 @@ export const EducationUniversityPanel = () => {
           <p>
             After graduating from Mahidol Wittayanusorn School, I took a gap
             year. I've participated as an intern and then a software engineer at
-            Brikl. Currently I'm looking forward to study higher education.
+            Brikl. Currently I'm looking forward to study higher education in
+            the fields of mathematics and computer science. I've also gained
+            some interest in economics.
           </p>
         </div>
       </div>

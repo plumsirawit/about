@@ -9,7 +9,7 @@ export const VolunteerExperienceMWITPanel = () => {
       <div className="main">
         <div className="description">
           <h1 className="header">
-            Volunteering as a student in Mahidol Wittayanusorn School
+            Volunteering in activities at Mahidol Wittayanusorn School
           </h1>
           <p className="body">
             As a student in high school, I enjoy devoting myself to develop
