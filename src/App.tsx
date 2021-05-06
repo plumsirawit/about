@@ -20,6 +20,7 @@ import {
   VolunteerExperienceMWITPanel,
   VolunteerExperienceTHACOPanel,
 } from './components/ExperiencePanel';
+import { SummaryPanel } from './components/SummaryPanel';
 
 interface AppProps {}
 
@@ -48,7 +49,7 @@ function App({}: AppProps) {
       <EducationHeadPanel />
       <AllEducationPanel />
       <AchievementsPanel />
-      <PagePanel>hello</PagePanel>
+      <SummaryPanel />
     </div>
   );
 }
