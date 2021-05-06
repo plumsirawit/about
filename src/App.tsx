@@ -6,9 +6,7 @@ import { PhotoPanel } from './components/PhotoPanel';
 import { NamePanel } from './components/NamePanel';
 import {
   EducationHeadPanel,
-  EducationPrimarySchoolPanel,
-  EducationMiddleSchoolPanel,
-  EducationHighSchoolPanel,
+  AllEducationPanel,
 } from './components/EducationPanel';
 import { AchievementsPanel } from './components/AchievementsPanel';
 import {
@@ -48,9 +46,7 @@ function App({}: AppProps) {
       <VolunteerExperienceMWITPanel />
       <VolunteerExperienceTHACOPanel />
       <EducationHeadPanel />
-      <EducationPrimarySchoolPanel />
-      <EducationMiddleSchoolPanel />
-      <EducationHighSchoolPanel />
+      <AllEducationPanel />
       <AchievementsPanel />
       <PagePanel>hello</PagePanel>
     </div>

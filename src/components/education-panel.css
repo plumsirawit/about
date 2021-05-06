@@ -18,59 +18,104 @@
   font-size: 5rem;
 }
 
-.education-primary .main {
-  height: 100vh;
-  max-height: 100vh;
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #fffef1;
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 1600px) {
+  .education-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.education-panel {
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  display: flex;
+  position: relative;
+}
+
+.education-panel .header {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.education-primary {
+  background: url('/dist/assets/education_primary.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.education-middle {
+  background: url('/dist/assets/education_middle.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.education-high {
+  background: url('/dist/assets/education_high.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.education-university {
+  background: url('/dist/assets/dark_exit.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.education-panel .overlay {
+  top: 0;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   z-index: 2;
-  /* background: #101213; */
-  background: #fffef1;
+  background: rgba(10, 12, 14, 0.8);
 }
 
-.education-primary .header {
-  font-family: 'Lato';
-  font-weight: 700;
-  font-style: italic;
-  font-size: 2rem;
-}
-
-.education-middle .main {
-  height: 100vh;
-  max-height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+.education-panel .main {
   width: 100%;
+  height: 100%;
   z-index: 2;
-  /* background: #101213; */
-  background: #fffef1;
 }
 
-.education-middle .header {
+.education-grid .description {
+  color: white;
+}
+
+.education-grid p {
+  /* margin-top: auto; */
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: calc(0.5vw + 0.5rem);
+  align-self: center;
+  justify-self: flex-end;
+  padding-bottom: 0.7em;
+  max-width: 70%;
+  margin: auto;
+}
+
+.education-grid .subheader {
   font-family: 'Lato';
-  font-weight: 700;
+  font-weight: 400;
   font-style: italic;
   font-size: 2rem;
 }
 
-.education-high .main {
-  height: 100vh;
-  max-height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 100%;
-  z-index: 2;
-  /* background: #101213; */
-  background: #fffef1;
-}
-
-.education-high .header {
-  font-family: 'Lato';
-  font-weight: 700;
-  font-style: italic;
-  font-size: 2rem;
+.education-university .overlay {
+  background: rgba(10, 12, 14, 0.5);
 }
