@@ -15,7 +15,7 @@
   font-family: 'Lato';
   font-weight: 900;
   font-style: italic;
-  font-size: 5rem;
+  font-size: calc(2.5vw + 2.5rem);
 }
 
 .education-grid {
@@ -48,7 +48,7 @@
   font-family: 'Lato';
   font-weight: 700;
   font-style: italic;
-  font-size: 3rem;
+  font-size: calc(1.5vw + 1.5rem);
 }
 
 .education-primary {
@@ -113,7 +113,7 @@
   font-family: 'Lato';
   font-weight: 400;
   font-style: italic;
-  font-size: 2rem;
+  font-size: calc(1vw + 1rem);
 }
 
 .education-university .overlay {
