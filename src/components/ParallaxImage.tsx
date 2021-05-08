@@ -55,7 +55,12 @@ export function useParallaxEffect<T extends HTMLElement>(
       const dy = (_mouseY - _h) / _h; // [-1, 1]
       const percentX = 50 + standardLogisticFunction(dx * 2) * 10;
       const percentY = 50 + standardLogisticFunction(dy * 2) * 10;
-      const depth = `${percentX}% ${percentY}%`;
+      const [oldPX, oldPY] = elem.style.backgroundPosition.includes('%')
+        ? elem.style.backgroundPosition.split('%').map((s) => Number(s.trim()))
+        : [percentX, percentY];
+      const depth = `${(percentX + oldPX * 9) / 10}% ${
+        (percentY + oldPY * 9) / 10
+      }%`;
       elem.style.backgroundPosition = depth;
     };
     console.log('hello', elem);
