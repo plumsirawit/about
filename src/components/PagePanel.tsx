@@ -4,12 +4,13 @@ import './page-panel.css';
 interface PagePanelProps {
   className?: string;
 }
-export function PagePanel<T extends PagePanelProps>(
-  props: React.PropsWithChildren<T>,
-) {
+export const PagePanel = React.forwardRef<
+  HTMLElement,
+  React.PropsWithChildren<PagePanelProps>
+>((props, ref) => {
   return (
-    <section className={['page-panel', props.className].join(' ')}>
+    <section ref={ref} className={['page-panel', props.className].join(' ')}>
       {props.children}
     </section>
   );
-}
+});

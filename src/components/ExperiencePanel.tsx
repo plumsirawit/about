@@ -1,17 +1,25 @@
 import React, { useEffect, useRef } from 'react';
+import { useParallaxEffect } from './ParallaxImage';
 import { PagePanel } from './PagePanel';
 import './experience-panel.css';
+import { useCombinedRefs } from '../utils/refs';
 
 interface IExperiencePanelProps {
   className?: string;
 }
-export const ExperiencePanel = (
-  props: React.PropsWithChildren<IExperiencePanelProps>,
-) => (
-  <PagePanel className={'experience ' + props.className}>
-    {props.children}
-  </PagePanel>
-);
+export const ExperiencePanel = React.forwardRef<
+  HTMLElement,
+  React.PropsWithChildren<IExperiencePanelProps>
+>((props, ref) => {
+  const backgroundImageRef = useRef<HTMLElement>(null);
+  const combinedRefs = useCombinedRefs<HTMLElement>(ref, backgroundImageRef);
+  useParallaxEffect(combinedRefs);
+  return (
+    <PagePanel ref={combinedRefs} className={'experience ' + props.className}>
+      {props.children}
+    </PagePanel>
+  );
+});
 
 export const ExperienceHeadPanel = () => {
   return (
