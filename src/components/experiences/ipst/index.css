@@ -1,6 +1,7 @@
 .experience-ipst {
   background: url('/dist/assets/computer_table_cut.jpg');
   background-position: center;
+  background-size: 150vw;
 }
 
 .experience.experience-ipst video {

@@ -57,7 +57,6 @@ export function useParallaxEffect<T extends HTMLElement>(
       const percentY = 50 + standardLogisticFunction(dy * 2) * 10;
       const depth = `${percentX}% ${percentY}%`;
       elem.style.backgroundPosition = depth;
-      elem.style.backgroundSize = '150vw';
     };
     console.log('hello', elem);
     elem.addEventListener('mousemove', parallax);
