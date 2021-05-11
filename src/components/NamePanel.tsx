@@ -3,6 +3,7 @@ import { PagePanel } from './PagePanel';
 import './name-panel.css';
 import drawingSvg from '../assets/drawing.svg';
 import { drawSVG } from '../utils/canvas';
+import { useScrollObserverEffect } from '../utils/useScrollObserverEffect';
 
 enum DrawingState {
   UNREADY,
@@ -39,27 +40,13 @@ export const NamePanel = () => {
         });
     }
   }, [svgRef.current, fetchState]);
-  useEffect(() => {
-    if (!svgRef.current) {
-      return;
-    }
-    if (drawingState === DrawingState.UNREADY) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          // isIntersecting is true when element and viewport are overlapping
-          // isIntersecting is false when element and viewport don't overlap
-          if (entries[0].isIntersecting === true) {
-            setDrawingState(DrawingState.READY);
-          }
-        },
-        { threshold: [0] },
-      );
-      observer.observe(svgRef.current);
-      return () => {
-        svgRef.current && observer.unobserve(svgRef.current);
-      };
-    }
-  }, [svgRef.current, drawingState, fetchState]);
+  useScrollObserverEffect(
+    svgRef,
+    (isObserving) =>
+      drawingState === DrawingState.UNREADY &&
+      isObserving &&
+      setDrawingState(DrawingState.READY),
+  );
   useEffect(() => {
     if (
       fetchState === FetchState.FETCHED &&
