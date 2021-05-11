@@ -27,7 +27,6 @@ export function useParallaxEffect<T extends HTMLElement>(
       }%`;
       elem.style.backgroundPosition = depth;
     };
-    console.log('hello', elem);
     elem.addEventListener('mousemove', parallax);
     return () => elem.removeEventListener('mousemove', parallax);
   }, [ref.current, document, window]);

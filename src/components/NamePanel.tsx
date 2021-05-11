@@ -3,7 +3,7 @@ import { PagePanel } from './PagePanel';
 import './name-panel.css';
 import drawingSvg from '../assets/drawing.svg';
 import { drawSVG } from '../utils/canvas';
-import { useScrollObserverEffect } from '../utils/useScrollObserverEffect';
+import { useIntersectionObserverEffect } from '../utils/useScrollObserverEffect';
 
 enum DrawingState {
   UNREADY,
@@ -40,7 +40,7 @@ export const NamePanel = () => {
         });
     }
   }, [svgRef.current, fetchState]);
-  useScrollObserverEffect(
+  useIntersectionObserverEffect(
     svgRef,
     (isObserving) =>
       drawingState === DrawingState.UNREADY &&
