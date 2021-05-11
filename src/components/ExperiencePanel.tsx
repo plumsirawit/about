@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { useParallaxEffect } from './ParallaxImage';
+import React, { useRef } from 'react';
+import { useParallaxEffect } from '../utils/useParallaxEffect';
 import { PagePanel } from './PagePanel';
 import './experience-panel.css';
 import { useCombinedRefs } from '../utils/refs';
