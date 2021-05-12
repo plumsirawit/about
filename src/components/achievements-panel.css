@@ -6,6 +6,13 @@
   min-height: 0;
 }
 
+.achievement > div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  height: 100%;
+}
+
 .achievements .main {
   display: flex;
   justify-content: space-between;

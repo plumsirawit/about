@@ -1,0 +1,52 @@
+.timeline {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.c2015-math-posn-1 .circle {
+  border: 10px solid rgb(176, 32, 233);
+}
+.c2015-math-posn-1 .vertical-bar-bottom {
+  background: rgb(176, 32, 233);
+}
+.c2015-math-posn-2 .circle {
+  border: 10px solid rgb(176, 32, 233);
+}
+.c2015-math-posn-2 .vertical-bar-top {
+  background: rgb(176, 32, 233);
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 10px solid green;
+  background: white;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.vertical-bar-bottom {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  width: 40px;
+  height: 50%;
+  background: green;
+  transform: translate(-50%, -50%);
+}
+
+.vertical-bar-top {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 40px;
+  height: 50%;
+  background: green;
+  transform: translate(-50%, -50%);
+}
