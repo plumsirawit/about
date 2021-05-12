@@ -48,7 +48,6 @@ function App({}: AppProps) {
       <VolunteerExperienceTHACOPanel />
       <EducationHeadPanel />
       <AllEducationPanel />
-      <AchievementsPanel />
       <SummaryPanel />
     </div>
   );

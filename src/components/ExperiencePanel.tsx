@@ -1,8 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParallaxEffect } from '../utils/useParallaxEffect';
 import { PagePanel } from './PagePanel';
 import './experience-panel.css';
 import { useCombinedRefs } from '../utils/refs';
+import { useWindowHeight } from '../utils/useWindowHeight';
+import { useScrollObserverEffect } from '../utils/useScrollObserverEffect';
+import AnimateHeight from 'react-animate-height';
 
 interface IExperiencePanelProps {
   className?: string;
@@ -14,10 +17,29 @@ export const ExperiencePanel = React.forwardRef<
   const backgroundImageRef = useRef<HTMLElement>(null);
   const combinedRefs = useCombinedRefs<HTMLElement>(ref, backgroundImageRef);
   useParallaxEffect(combinedRefs);
+  const [height, setHeight] = useState<number>(30); // in vh
+  const windowHeight = useWindowHeight();
+  useScrollObserverEffect(combinedRefs, (isObserving) => {
+    setHeight(isObserving ? 50 : 30);
+  });
+  useEffect(() => {
+    if (height === 50) {
+      // observing
+      combinedRefs.current?.classList.add('showbody');
+    } else {
+      combinedRefs.current?.classList.remove('showbody');
+    }
+  }, [height, combinedRefs.current]);
   return (
-    <PagePanel ref={combinedRefs} className={'experience ' + props.className}>
-      {props.children}
-    </PagePanel>
+    <section ref={combinedRefs}>
+      <AnimateHeight
+        duration={500}
+        height={(height * windowHeight) / 100}
+        className={'page-panel experience ' + props.className}
+      >
+        {props.children}
+      </AnimateHeight>
+    </section>
   );
 });
 
