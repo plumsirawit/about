@@ -8,7 +8,10 @@ export function useParallaxEffect<T extends HTMLElement>(
     if (!ref.current || !window || !document) {
       return;
     }
-    const elem = ref.current;
+    const elem = ref.current?.firstElementChild as HTMLElement;
+    if (!elem) {
+      return;
+    }
     const parallax = (e: MouseEvent) => {
       let _w = elem.clientWidth / 2;
       let _h = elem.clientHeight / 2;
