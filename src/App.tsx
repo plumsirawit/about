@@ -35,7 +35,6 @@ function App({}: AppProps) {
   // Return the App component.
   return (
     <div className="App">
-      <PhotoPanel />
       <NamePanel />
       <ExperienceHeadPanel />
       <ExperienceBriklPanel />

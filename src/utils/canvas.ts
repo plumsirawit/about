@@ -1,8 +1,8 @@
 /**
  * Adapted from https://wiki.aleen42.com/Programming/JavaScript/webgl/canvas/animate_drawing_of_svg_path/animate_drawing_of_svg_path.html
  */
-const distancePerPoint = 100;
-const drawFPS = 60;
+const distancePerPoint = 1000;
+const drawFPS = 100;
 
 export const drawPath = (orig: SVGPathElement): Promise<void> =>
   new Promise((res, rej) => {

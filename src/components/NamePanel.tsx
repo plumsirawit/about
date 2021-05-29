@@ -66,9 +66,17 @@ export const NamePanel = () => {
   useEffect(() => {
     console.log(drawingState, fetchState);
   }, [drawingState, fetchState]);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (drawingState === DrawingState.DONE && overlayRef.current) {
+      const divElem = overlayRef.current;
+      divElem.classList.add('fade-in');
+    }
+  }, [drawingState]);
   return (
     <PagePanel className="name">
       <div className="main">
+        <div className="overlay" ref={overlayRef}></div>
         <h1 className="header">Hello!</h1>
         <div ref={svgRef} className="drawing" />
         <p className="content-bottom">

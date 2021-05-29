@@ -21,6 +21,7 @@
   margin-top: 0.5em;
   margin-bottom: 0.1em;
   justify-self: flex-start;
+  z-index: 10;
 }
 
 .name .drawing {
@@ -46,4 +47,45 @@
 path {
   stroke: none;
   fill: none;
+}
+
+.name .overlay {
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: url('/dist/assets/main_cut.jpg');
+  background-position: center;
+  background-size: cover;
+  display: none;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.name .overlay.fade-in {
+  display: block;
+  -webkit-animation-name: fade-in;
+  -webkit-animation-duration: 1s;
+  animation-name: fade-in;
+  animation-duration: 1s;
 }
