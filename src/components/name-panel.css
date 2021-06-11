@@ -61,7 +61,7 @@ path {
   background: url('/dist/assets/main_cut.jpg');
   background-position: center;
   background-size: cover;
-  display: none;
+  opacity: 0;
 }
 
 @keyframes fade-in {
@@ -88,4 +88,5 @@ path {
   -webkit-animation-duration: 1s;
   animation-name: fade-in;
   animation-duration: 1s;
+  opacity: 1;
 }
