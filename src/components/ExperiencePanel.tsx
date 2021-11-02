@@ -31,10 +31,8 @@ export const ExperienceHeadPanel = React.forwardRef<HTMLHeadingElement>(
   (_, ref) => {
     return (
       <PagePanel className="experience-head">
-        <div className="main">
-          <h1 className="header" ref={ref}>
-            Work Experience
-          </h1>
+        <div className="main" ref={ref}>
+          <h1 className="header">Work Experience</h1>
         </div>
       </PagePanel>
     );
@@ -50,10 +48,8 @@ export const VolunteerExperienceHeadPanel = React.forwardRef<HTMLHeadingElement>
   (_, ref) => {
     return (
       <PagePanel className="experience-head">
-        <div className="main">
-          <h1 className="header" ref={ref}>
-            Volunteer Experience
-          </h1>
+        <div className="main" ref={ref}>
+          <h1 className="header">Volunteer Experience</h1>
         </div>
       </PagePanel>
     );
