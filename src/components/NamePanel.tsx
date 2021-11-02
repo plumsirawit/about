@@ -70,21 +70,28 @@ export const NamePanel = () => {
   useEffect(() => {
     if (drawingState === DrawingState.DONE && overlayRef.current) {
       const divElem = overlayRef.current;
-      divElem.classList.add('fade-in');
+      // divElem.classList.add('fade-in');
     }
   }, [drawingState]);
   return (
     <PagePanel className="name">
       <div className="main">
         <div className="overlay" ref={overlayRef}></div>
-        <h1 className="header">Hello!</h1>
-        <div ref={svgRef} className="drawing" />
-        <p className="content-bottom">
-          My name is Sirawit Pongnakintr. I'm a student preparing to study
-          abroad in the fields of mathematics and computer science. I'm also
-          interested in physics, economics, sociology, and philosophy. My
-          ultimate goal of living is to find the ultimate answer of life itself.
-        </p>
+        <h1 className="header">Hello, world!</h1>
+        <div className="content-wrapper">
+          <div>
+            <div ref={svgRef} className="drawing" />
+          </div>
+          <div>
+            <p className="content-bottom">
+              My name is Sirawit Pongnakintr. I'm a student preparing to study
+              abroad in the fields of mathematics and computer science. I'm also
+              interested in physics, economics, sociology, and philosophy. My
+              ultimate goal of living is to find the ultimate answer of life
+              itself.
+            </p>
+          </div>
+        </div>
       </div>
       {/* <canvas className="overlay" ref={nameCanvas} /> */}
     </PagePanel>

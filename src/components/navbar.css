@@ -1,0 +1,52 @@
+.nav {
+  left: 0;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  position: sticky;
+  width: fit-content;
+  height: 100vh;
+  color: white;
+  background: rgba(11, 12, 17, 1);
+}
+
+.nav-rightbar {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: rgba(23, 24, 35, 1);
+}
+
+.nav-left {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; */
+  display: block;
+  max-width: 20vw;
+  max-height: 300px;
+}
+
+.nav-bottom {
+  top: auto;
+  bottom: 0;
+  position: absolute;
+}
+
+.scroll-btn {
+  max-width: 20vw;
+  cursor: pointer;
+  width: 100%;
+}
+
+button.scroll-btn {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.7vw;
+  background: none;
+  color: white;
+  border: none;
+  text-align: right;
+}

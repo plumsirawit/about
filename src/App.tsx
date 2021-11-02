@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { PagePanel } from './components/PagePanel';
@@ -21,6 +21,8 @@ import {
   VolunteerExperienceTHACOPanel,
 } from './components/ExperiencePanel';
 import { SummaryPanel } from './components/SummaryPanel';
+import { ScrollToRefButton } from './components/ScrollToRefButton';
+import { Navbar } from './components/Navbar';
 
 interface AppProps {}
 
@@ -33,20 +35,32 @@ function App({}: AppProps) {
     return () => clearTimeout(timer);
   }, [count, setCount]);
   // Return the App component.
+  const educationRef = useRef<HTMLHeadingElement>(null);
+  const workRef = useRef<HTMLHeadingElement>(null);
+  const volunteerRef = useRef<HTMLHeadingElement>(null);
   return (
     <div className="App">
       <NamePanel />
-      <ExperienceHeadPanel />
-      <ExperienceBriklPanel />
-      <ExperienceFreelancePanel />
-      <ExperienceSCSUPanel />
-      <ExperienceIPSTPanel />
-      <VolunteerExperienceHeadPanel />
-      <VolunteerExperienceFeedingThailandPanel />
-      <VolunteerExperienceMWITPanel />
-      <VolunteerExperienceTHACOPanel />
-      <EducationHeadPanel />
-      <AllEducationPanel />
+      <div className="nav-wrapper">
+        <Navbar
+          educationRef={educationRef}
+          workRef={workRef}
+          volunteerRef={volunteerRef}
+        />
+        <div className="panels">
+          <EducationHeadPanel ref={educationRef} />
+          <AllEducationPanel />
+          <ExperienceHeadPanel ref={workRef} />
+          <ExperienceBriklPanel />
+          <ExperienceFreelancePanel />
+          <ExperienceSCSUPanel />
+          <ExperienceIPSTPanel />
+          <VolunteerExperienceHeadPanel ref={volunteerRef} />
+          <VolunteerExperienceFeedingThailandPanel />
+          <VolunteerExperienceMWITPanel />
+          <VolunteerExperienceTHACOPanel />
+        </div>
+      </div>
       <SummaryPanel />
     </div>
   );

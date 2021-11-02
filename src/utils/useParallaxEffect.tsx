@@ -8,7 +8,7 @@ export function useParallaxEffect<T extends HTMLElement>(
     if (!ref.current || !window || !document) {
       return;
     }
-    const elem = ref.current?.firstElementChild as HTMLElement;
+    const elem = ref.current as HTMLElement;
     if (!elem) {
       return;
     }

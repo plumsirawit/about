@@ -8,7 +8,9 @@
   width: 100%;
   z-index: 2;
   /* background: #101213; */
-  background: #fffef1;
+  /* background: #fffef1; */
+  background: rgba(11, 12, 17, 1);
+  color: rgba(255, 254, 241, 0.9);
 }
 
 .education-head .header {

@@ -5,5 +5,11 @@
 }
 
 .experience.experience-thaco .overlay {
-  background: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 12, 14, 1),
+    rgba(10, 12, 14, 0),
+    rgba(10, 12, 14, 0),
+    rgba(10, 12, 14, 1)
+  );
 }

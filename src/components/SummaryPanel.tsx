@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { PagePanel } from './PagePanel';
-import mainPhoto from '../assets/selfsprite_cut.png';
 import './summary-panel.css';
 
 interface ISummaryPhotoProps {

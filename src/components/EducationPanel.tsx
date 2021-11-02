@@ -1,17 +1,16 @@
 import React from 'react';
 import { PagePanel } from './PagePanel';
-import mainPhoto from '../assets/main_cut.jpg';
 import './education-panel.css';
 
-export const EducationHeadPanel = () => {
+export const EducationHeadPanel = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <PagePanel className="education-head">
-      <div className="main">
+      <div className="main" ref={ref}>
         <h1 className="header">Education</h1>
       </div>
     </PagePanel>
   );
-};
+});
 
 export const AllEducationPanel = () => {
   return (
